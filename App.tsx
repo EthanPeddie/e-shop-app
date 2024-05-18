@@ -1,13 +1,17 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
+import { PaperProvider } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import ProductScreen from "./app/screens/ProductScreen";
 import colors from "./app/config/colors";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ProductScreen />
-    </View>
+    <PaperProvider>
+      <SafeAreaView style={styles.container}>
+        <ProductScreen />
+      </SafeAreaView>
+    </PaperProvider>
   );
 }
 

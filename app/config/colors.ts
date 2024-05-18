@@ -4,4 +4,6 @@ export default {
   danger: "#EF4D4D",
   black: "#000000",
   white: "#FFFFFF",
+  star: "#FF9214",
+  gray: "#F0F0F0",
 };
