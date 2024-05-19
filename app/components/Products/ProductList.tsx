@@ -8,7 +8,6 @@ import {
   Dimensions,
 } from "react-native";
 import { Icon } from "react-native-paper";
-
 import colors from "../../config/colors";
 import { Product } from "../../types/types";
 
@@ -33,9 +32,11 @@ const ProductList = ({ products }: ProductProps) => {
         />
       </TouchableOpacity>
       <View style={styles.nameRatingContainer}>
-        <Text style={styles.productName}>{products.name}</Text>
+        <Text style={styles.productName} numberOfLines={1}>
+          {products.name}
+        </Text>
         <View style={styles.ratingContainer}>
-          <Icon source="star" color={colors.star} size={25} />
+          <Icon source="star" color={colors.star} size={18} />
           <Text style={styles.rating}>
             {products.rating ? products.rating : 0}
           </Text>
@@ -54,9 +55,16 @@ const ProductList = ({ products }: ProductProps) => {
 const styles = StyleSheet.create({
   productContainer: {
     width: windowWidth / 2 - 20,
-    margin: 10,
     backgroundColor: colors.white,
+    marginVertical: 10,
     borderRadius: 10,
+    marginRight: 10,
+    shadowColor: colors.black,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    padding: 10,
   },
   imageContainer: {
     backgroundColor: colors.smoke,
@@ -74,16 +82,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 10,
+    paddingHorizontal: 5,
   },
   productName: {
     color: colors.black,
     fontSize: 16,
     fontWeight: "bold",
+    flex: 1,
   },
   ratingContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 5,
   },
   rating: {
     fontSize: 16,
