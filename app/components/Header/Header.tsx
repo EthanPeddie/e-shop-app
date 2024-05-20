@@ -1,10 +1,9 @@
 import React, { memo } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { IconButton } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 import colors from "../../config/colors";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
 import { ProductNavigationProp } from "../../types/NavigationTypes";
 
 const Header = () => {
@@ -12,7 +11,7 @@ const Header = () => {
 
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerText}>E-Shop</Text>
+      <Text style={styles.headerText}>E-SHOP</Text>
       <TouchableOpacity
         onPress={() => navigation.navigate("Search")}
         style={styles.searchButton}
@@ -28,14 +27,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 5,
+    paddingHorizontal: 20,
+    backgroundColor: colors.white,
+    marginBottom: 10,
+    paddingVertical: 5,
   },
   headerText: {
     fontSize: 30,
-    color: colors.green,
+    color: colors.black,
     fontWeight: "bold",
   },
-  searchButton: {},
+  searchButton: {
+    backgroundColor: colors.white,
+    borderWidth: 0.4,
+    borderRadius: 50,
+  },
 });
 
 export default memo(Header);

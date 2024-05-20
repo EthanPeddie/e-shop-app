@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { memo } from "react";
 import { Avatar } from "react-native-paper";
 
@@ -11,7 +11,7 @@ interface Props {
 
 const SearchProduct = ({ products }: Props) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Avatar.Image
         size={50}
         source={{
@@ -26,7 +26,7 @@ const SearchProduct = ({ products }: Props) => {
           {products.description}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
