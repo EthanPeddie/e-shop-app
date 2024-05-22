@@ -15,9 +15,7 @@ const SearchProduct = ({ products }: Props) => {
       <Avatar.Image
         size={50}
         source={{
-          uri: products.image
-            ? products.image
-            : "https://odoo-community.org/web/image/product.template/3936/image_1024?unique=7f851f0",
+          uri: products.image ? products.image : "https://shorturl.at/pe3O2",
         }}
       />
       <View style={styles.textContainer}>

@@ -1,5 +1,6 @@
 import React, { memo } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { Image } from "expo-image";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-paper";
 import colors from "../../config/colors";
 import { Product } from "../../types/types";
@@ -14,13 +15,11 @@ const ProductList = ({ products }: ProductProps) => {
     <View style={styles.productContainer}>
       <TouchableOpacity style={styles.imageContainer}>
         <Image
+          contentFit="fill"
           source={{
-            uri: products.image
-              ? products.image
-              : "https://odoo-community.org/web/image/product.template/3936/image_1024?unique=7f851f0",
+            uri: products.image ? products.image : "https://shorturl.at/pe3O2",
           }}
           style={styles.image}
-          resizeMode="cover"
         />
       </TouchableOpacity>
       <View style={styles.nameRatingContainer}>

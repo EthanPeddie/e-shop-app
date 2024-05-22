@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   productContainer: {
     width: windowWidth / 2 - 20,
     backgroundColor: colors.white,
-    marginVertical: 10,
+    marginBottom: 10,
     borderRadius: 10,
     marginRight: 10,
     shadowColor: colors.black,

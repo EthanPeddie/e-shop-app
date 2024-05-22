@@ -1,5 +1,3 @@
-// types/types.ts
-
 export interface Product {
   _id: { $oid: string };
   image: string;
@@ -13,4 +11,12 @@ export interface Product {
   countInStock: number;
   __v: number;
   rating?: number;
+}
+
+export interface Category {
+  _id: {
+    $oid: string;
+  };
+  name: string;
+  __v: number;
 }
