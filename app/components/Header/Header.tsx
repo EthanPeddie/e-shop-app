@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import colors from "../../config/colors";
 import { ProductNavigationProp } from "../../types/NavigationTypes";
+import route from "../../navigations/route";
 
 const Header = () => {
   const navigation = useNavigation<ProductNavigationProp>();
@@ -13,7 +14,7 @@ const Header = () => {
     <View style={styles.headerContainer}>
       <Text style={styles.headerText}>E-SHOP</Text>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Search")}
+        onPress={() => navigation.navigate(route.SEARCH)}
         style={styles.searchButton}
       >
         <IconButton icon="magnify" size={30} />

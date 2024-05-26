@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 10,
     justifyContent: "center",
-    marginBottom: 40,
+    marginBottom: 60,
     borderWidth: 0.3,
   },
   activeButton: {

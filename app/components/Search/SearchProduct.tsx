@@ -1,17 +1,25 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { Avatar } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 import { Product } from "../../types/types";
 import colors from "../../config/colors";
+import route from "../../navigations/route";
+import { ProductNavigationProp } from "../../types/NavigationTypes";
 
 interface Props {
   products: Product;
 }
 
 const SearchProduct = ({ products }: Props) => {
+  const navigation = useNavigation<ProductNavigationProp>();
+
+  const handleDetailPress = useCallback(() => {
+    navigation.navigate(route.DETAILS, { product: products });
+  }, [navigation, products]);
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handleDetailPress}>
       <Avatar.Image
         size={50}
         source={{

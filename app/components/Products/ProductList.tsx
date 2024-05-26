@@ -1,19 +1,30 @@
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { Image } from "expo-image";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
+
 import colors from "../../config/colors";
 import { Product } from "../../types/types";
 import { styles } from "./ProductListStyle";
-
+import { ProductNavigationProp } from "../../types/NavigationTypes";
+import route from "../../navigations/route";
 interface ProductProps {
   products: Product;
 }
 
 const ProductList = ({ products }: ProductProps) => {
+  const navigation = useNavigation<ProductNavigationProp>();
+
+  const handleDetailPress = useCallback(() => {
+    navigation.navigate(route.DETAILS, { product: products });
+  }, [products, navigation]);
   return (
     <View style={styles.productContainer}>
-      <TouchableOpacity style={styles.imageContainer}>
+      <TouchableOpacity
+        style={styles.imageContainer}
+        onPress={handleDetailPress}
+      >
         <Image
           contentFit="fill"
           source={{

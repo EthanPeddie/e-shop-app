@@ -5,14 +5,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import "react-native-gesture-handler";
 
 import colors from "./app/config/colors";
-import StackNavigator from "./app/navigations/StackNavigator";
+import BottomNavigator from "./app/navigations/BottomNavigator";
+import HomeStackNavigator from "./app/navigations/HomeStackNavigator";
 
 export default function App() {
   return (
     <NavigationContainer>
       <PaperProvider>
         <SafeAreaView style={styles.container}>
-          <StackNavigator />
+          <HomeStackNavigator />
         </SafeAreaView>
       </PaperProvider>
     </NavigationContainer>

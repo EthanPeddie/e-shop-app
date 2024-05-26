@@ -30,23 +30,19 @@ const ProductScreen = () => {
     setSelectedCategory(category);
   }, []);
 
-  const renderItem = useMemo(
-    () =>
-      ({ item }: { item: Product }) =>
-        <ProductList products={item} />,
+  const renderItem = useCallback(
+    ({ item }: { item: Product }) => <ProductList products={item} />,
     [filteredProducts]
   );
 
-  const renderCategoriesList = useMemo(
-    () =>
-      ({ item }: { item: Category }) =>
-        (
-          <CategoriesList
-            categories={item}
-            handleCategoryPress={handleCategoryPress}
-            selectedCategory={selectedCategory}
-          />
-        ),
+  const renderCategoriesList = useCallback(
+    ({ item }: { item: Category }) => (
+      <CategoriesList
+        categories={item}
+        handleCategoryPress={handleCategoryPress}
+        selectedCategory={selectedCategory}
+      />
+    ),
     [handleCategoryPress, selectedCategory]
   );
 
